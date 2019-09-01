@@ -75,7 +75,8 @@ function getUrl(resourceKey, mimeType, userEmail) {
     ContentType: "multipart/form-data",
     Expires: (5 * 60),
     Metadata: {
-      "x-amz-meta-user": userEmail
+      "user": userEmail,
+      "token": "prueba"
     }
   };
 
