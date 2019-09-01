@@ -1,5 +1,6 @@
 [build]
   functions = "lambda"
+  publish = "build/"
   Command = "npm run build"
 [build.environment]
 
