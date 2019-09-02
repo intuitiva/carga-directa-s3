@@ -21,7 +21,7 @@ exports.handler = function (event, context, callback) {
   }
   try {
     var body = parseBody(event.body, event.isBase64Encoded);
-    console.log(event.body);
+    console.log(body);
     callback(null, getSignedUrl(body.clientFilename, body.mimeType, body.type, body.userEmail, body.userToken));
   } catch (error) {
     var response = getFailurePayload("Request could not be processed.");
