@@ -26,6 +26,7 @@ Para que se permita
 4. Agregar las variables de entorno de netlify (ver abajo)
 5. Habilitar Netlify Identity y configuarlo como invite-only
 6. Entrar a Netlify Identity e invitar a alguien
+7. Cuando acepte el usuario la invitación, asignarle Nombre al usuario invitado (__Importante!!!__)
 
 ### Variables de entorno a configurar en Netlify
 ```
