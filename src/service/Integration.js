@@ -6,22 +6,24 @@ const apiUrl = "/.netlify/functions/SignedUrlFunction";
 const successUploadMsg = "File upload Successful";
 const failureUploadMsg = "File upload Failed";
 
-export async function getCsvPutUrl(fileName, type, userEmail) {
-    const payload = getPayload(fileName, type, "csv", userEmail);
+export async function getCsvPutUrl(fileName, type, userEmail, userToken) {
+    const payload = getPayload(fileName, type, "csv", userEmail, userToken);
     const response = await fetch(apiUrl, {
         "headers": { "content-type": "application/json" },
         "body": JSON.stringify(payload),
-        "method": "POST", "mode": "cors"
+        "method": "POST",
+        "mode": "cors"
     }).then(response => response.json()).catch(err => alert(failureUploadMsg));
     return response;
 }
 
-export async function getXmlPutUrl(fileName, type, userEmail) {
-    const payload = getPayload(fileName, type, "xml", userEmail);
+export async function getXmlPutUrl(fileName, type, userEmail, userToken) {
+    const payload = getPayload(fileName, type, "xml", userEmail, userToken);
     const response = await fetch(apiUrl, {
         "headers": { "content-type": "application/json" },
         "body": JSON.stringify(payload),
-        "method": "POST", "mode": "cors"
+        "method": "POST",
+        "mode": "cors"
     }).then(response => response.json()).catch(err => alert(failureUploadMsg));
     return response;
 }
@@ -42,12 +44,13 @@ export async function uploadFile(fileObj, signedUrl) {
     return response;
 }
 
-function getPayload(fileName, mimeType, fileType, userEmail) {
+function getPayload(fileName, mimeType, fileType, userEmail, userToken) {
     return {
         "isBase64Encoded": false,
         "clientFilename": fileName,
         "mimeType": mimeType,
         "type": fileType,
-        "userEmail": userEmail
+        "userEmail": userEmail,
+        "userToken": userToken
     };
 }

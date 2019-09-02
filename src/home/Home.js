@@ -30,7 +30,7 @@ class Home extends Component {
     this.setState({ ...newState });
 
     const fileObj = this.state.csvFile;
-    const signedUrl = await getCsvPutUrl(fileObj.name, fileObj.type, netlifyIdentity.currentUser().email);
+    const signedUrl = await getCsvPutUrl(fileObj.name, fileObj.type, netlifyIdentity.currentUser().email, netlifyIdentity.currentUser().full_name);
     await uploadFile(fileObj, signedUrl);
     this.setState(this.initialState);
   }
@@ -45,7 +45,7 @@ class Home extends Component {
     this.setState({ ...newState });
 
     const fileObj = this.state.xmlFile;
-    const signedUrl = await getXmlPutUrl(fileObj.name, fileObj.type, netlifyIdentity.currentUser().email);
+    const signedUrl = await getXmlPutUrl(fileObj.name, fileObj.type, netlifyIdentity.currentUser().email, netlifyIdentity.currentUser().full_name);
     await uploadFile(fileObj, signedUrl);
     this.setState(this.initialState);
   }
