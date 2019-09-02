@@ -26,7 +26,7 @@ Para que se permita
 4. Agregar las variables de entorno de netlify (ver abajo)
 5. Habilitar Netlify Identity y configuarlo como invite-only
 6. Entrar a Netlify Identity e invitar a alguien
-7. Cuando acepte el usuario la invitación, asignarle Nombre al usuario invitado (__Importante!!!__)
+7. Cuando acepte el usuario la invitación, asignarle Nombre al usuario invitado (__Importante!!!__), si no se le pone nombre (cualquier cosa) no se va a poder subir el archivo. Este nombre lo utilizamos para subir el token de acceso de Zauru para corroborar permisos para subir la información a la empresa pertinente.
 
 ### Variables de entorno a configurar en Netlify
 ```
