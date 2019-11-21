@@ -85,7 +85,8 @@ class Home extends Component {
             /></div>
           }
           <form onSubmit={this.submitCsvFile}>
-            Seleccionar archivo de compras .TXT (Envoy > Reportes > Mercancía Seca > Compras > Detalles de Compras > Imprimir a: Archivo Delimitado > Todos los Proveedores > Fecha de ayer) El archivo se llama "Detalles de Compra.txt":
+            <h3>Seleccionar archivo de compras .TXT</h3>
+            <p>Envoy > Reportes > Mercancía Seca > Compras > Detalles de Compras > Imprimir a: Archivo Delimitado > Todos los Proveedores > Fecha de ayer) El archivo se llama "Detalles de Compra.txt"</p>
             <input className="form-control input-sm"
               id="csvFileInput"
               type="file"
@@ -97,8 +98,9 @@ class Home extends Component {
           </form>
           <br />
           <form onSubmit={this.submitXmlFile}>
-            Seleccionar archivo de ventas XML.GZ (Sapphire Transaction Manager > Tools > Options... > Ir a la carpeta que dice allí > jalar archivo de ayer (el .2 no el .1):
-             <input className="form-control input-sm"
+            <h3>Seleccionar archivo de ventas XML.GZ </h3>
+            <p>Sapphire Transaction Manager > Tools > Options... > Ir a la carpeta que dice allí > jalar archivo de ayer (el .2 no el .1)</p>
+            <input className="form-control input-sm"
               id="xmlFileInput"
               type="file"
               name="file"

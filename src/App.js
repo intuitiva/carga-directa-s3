@@ -15,7 +15,7 @@ function AuthExample() {
     <Router>
       <div>
         <AuthButton />
-        <Link to="/home" className="mainPage"><h5 className="headerText">Upload Files</h5></Link>
+        <Link to="/home" className="mainPage"><h5 className="headerText">Cargar Datos</h5></Link>
         <Route path="/login" component={Login} />
         <PrivateRoute path="/home" component={Home} />
       </div>
