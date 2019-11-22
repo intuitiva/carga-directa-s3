@@ -1,3 +1,4 @@
+// HELPERS
 var async = require('async');
 const fetch = require('node-fetch');
 
@@ -6,8 +7,8 @@ const apiUrl = "/.netlify/functions/SignedUrlFunction";
 const successUploadMsg = "File upload Successful";
 const failureUploadMsg = "File upload Failed";
 
-export async function getCsvPutUrl(fileName, type, userEmail, userToken) {
-    const payload = getPayload(fileName, type, "csv", userEmail, userToken);
+export async function getCsvPutUrl(fileName, type, userEmail, userToken, entityId) {
+    const payload = getPayload(fileName, type, "csv", userEmail, userToken, entityId);
     const response = await fetch(apiUrl, {
         "headers": { "content-type": "application/json" },
         "body": JSON.stringify(payload),
@@ -17,8 +18,8 @@ export async function getCsvPutUrl(fileName, type, userEmail, userToken) {
     return response;
 }
 
-export async function getXmlPutUrl(fileName, type, userEmail, userToken) {
-    const payload = getPayload(fileName, type, "xml", userEmail, userToken);
+export async function getXmlPutUrl(fileName, type, userEmail, userToken, entityId) {
+    const payload = getPayload(fileName, type, "xml", userEmail, userToken, entityId);
     const response = await fetch(apiUrl, {
         "headers": { "content-type": "application/json" },
         "body": JSON.stringify(payload),
@@ -44,13 +45,14 @@ export async function uploadFile(fileObj, signedUrl) {
     return response;
 }
 
-function getPayload(fileName, mimeType, fileType, userEmail, userToken) {
+function getPayload(fileName, mimeType, fileType, userEmail, userToken, entityId) {
     return {
         "isBase64Encoded": false,
         "clientFilename": fileName,
         "mimeType": mimeType,
         "type": fileType,
         "userEmail": userEmail,
-        "userToken": userToken
+        "userToken": userToken,
+        "entityId": entityId
     };
 }

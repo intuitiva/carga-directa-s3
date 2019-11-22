@@ -22,7 +22,7 @@ exports.handler = function (event, context, callback) {
   }
   try {
     var body = parseBody(event.body, event.isBase64Encoded);
-    callback(null, getSignedUrl(body.clientFilename, body.mimeType, body.type, body.userEmail, body.userToken));
+    callback(null, getSignedUrl(body.clientFilename, body.mimeType, body.type, body.userEmail, body.userToken, body.entityId));
   } catch (error) {
     var response = getFailurePayload("Request could not be processed.");
   }
@@ -63,13 +63,13 @@ function getHeaders() {
   };
 }
 
-function getSignedUrl(fileName, mimeType, type, userEmail, userToken) {
+function getSignedUrl(fileName, mimeType, type, userEmail, userToken, entityId) {
   var resourceKey = type === "csv" ? `csv/${cuid()}/${fileName}` : `xml/${cuid()}/${fileName}`;
-  return getUrl(resourceKey, mimeType, userEmail, userToken);
+  return getUrl(resourceKey, mimeType, userEmail, userToken, entityId);
 }
 
 // Note: SignedUrl expiry is 5 min (5*60)
-function getUrl(resourceKey, mimeType, userEmail, userToken) {
+function getUrl(resourceKey, mimeType, userEmail, userToken, entityId) {
   const putParams = {
     Bucket: s3BucketName,
     Key: resourceKey,
@@ -77,7 +77,8 @@ function getUrl(resourceKey, mimeType, userEmail, userToken) {
     Expires: (5 * 60),
     Metadata: {
       "user": userEmail,
-      "token": userToken
+      "token": userToken,
+      "entity": entityId
     }
   };
 
