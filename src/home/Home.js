@@ -74,7 +74,8 @@ class Home extends Component {
     return (
       <div>
         <div className="home-header">
-          Bienvenido  {netlifyIdentity.currentUser().email} !! </div>
+          Bienvenido  {netlifyIdentity.currentUser().email}
+        </div>
         <div className='home-body'>
           {this.state.isLoading &&
             <div className="uploaderMessage"><Loader
@@ -84,21 +85,24 @@ class Home extends Component {
               width="100"
             /></div>
           }
-          <form onSubmit={this.submitCsvFile}>
-            <h3>Seleccionar archivo de compras .TXT</h3>
-            <p>Envoy > Reportes > Mercancía Seca > Compras > Detalles de Compras > Imprimir a: Archivo Delimitado > Todos los Proveedores > Fecha de ayer) El archivo se llama "Detalles de Compra.txt"</p>
-            <input className="form-control input-sm"
-              id="csvFileInput"
-              type="file"
-              name="file"
-              value={this.state.csvValue}
-              onChange={this.handleCsvFileUpload}
-              accept=".txt" />
-            <button className="uploadButton" type='submit'>Subir TXT</button>
-          </form>
+          <div class="tile">
+            <form onSubmit={this.submitCsvFile}>
+              <h5 class="tile-title">Seleccionar archivo de compras .TXT</h5>
+              <p>Envoy > Reportes > Mercancía Seca > Compras > Detalles de Compras > Imprimir a: Archivo Delimitado > Todos los Proveedores > Fecha de ayer.</p>
+              <p class="small">El archivo se llama "Detalles de Compra.txt"</p>
+              <input className="form-control input-sm"
+                id="csvFileInput"
+                type="file"
+                name="file"
+                value={this.state.csvValue}
+                onChange={this.handleCsvFileUpload}
+                accept=".txt" />
+              <button className="btn btn-success" type='submit'>Subir TXT</button>
+            </form>
+          </div>
           <br />
           <form onSubmit={this.submitXmlFile}>
-            <h3>Seleccionar archivo de ventas XML.GZ </h3>
+            <h5>Seleccionar archivo de ventas XML.GZ </h5>
             <p>Sapphire Transaction Manager > Tools > Options... > Ir a la carpeta que dice allí > jalar archivo de ayer (el .2 no el .1)</p>
             <input className="form-control input-sm"
               id="xmlFileInput"
@@ -107,7 +111,7 @@ class Home extends Component {
               value={this.state.xmlValue}
               onChange={this.handleXmlFileUpload}
               accept=".xml.gz" />
-            <button className="uploadButton" type='submit'>Subir XML.GZ</button>
+            <button className="btn btn-inverse" type='submit'>Subir XML.GZ</button>
           </form>
         </div>
       </div>
