@@ -26,12 +26,12 @@ Para que se permita
 4. Agregar las variables de entorno de netlify (ver abajo)
 5. Habilitar Netlify Identity y configuarlo como invite-only
 6. Entrar a Netlify Identity e invitar a alguien
-7. Cuando acepte el usuario la invitación, asignarle Nombre al usuario invitado (__Importante!!!__), si no se le pone nombre (cualquier cosa) no se va a poder subir el archivo. Este nombre lo utilizamos para subir el token de acceso de Zauru para corroborar permisos para subir la información a la empresa pertinente.
+7. Cuando acepte el usuario la invitación, ingresar a Netlify > Identity y al entrar al usuario hay una sección que dice "User metadata", esa información se puede editar con el botón de "Edit settings". En el campo "Name" vamos a asignarle 3 cosas: el entity_id, un espacio en blanco y el token de Zauru del usuario (__Importante!!!__), si no se le coloca esta información no vamos a poder identificar quien subió el archivo y a que empresa. Si no se coloca bien, si va a dejar subir el archivo pero la siguiente fase no va a poder avisarle a Zauru de la existencia de este archivo (en Zauru se lleva el flujo de la información)
 
 ### Variables de entorno a configurar en Netlify
 ```
-AWS_S3_ACCESS_KEY = "mega secret"
-AWS_S3_SECRET_KEY = "super secret"
+AWS_S3_ACCESS_KEY = "mega secreto"
+AWS_S3_SECRET_KEY = "super secreto"
 AWS_AZ_REGION = "us-east-1"
 AWS_S3_BUCKET = "super-bucket"
 ```

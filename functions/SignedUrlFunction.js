@@ -1,3 +1,4 @@
+// This function gives me a temp URL (signed) where I can put my uploaded files
 var Buffer = require("buffer").Buffer;
 var AWS = require("aws-sdk");
 var cuid = require("cuid");
