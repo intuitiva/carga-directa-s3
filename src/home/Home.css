@@ -1,6 +1,7 @@
 .column {
   float: left;
-  width: 50%;
+  width: 42%;
+  margin: 4%;
 }
 
 /* Clear floats after the columns */
@@ -15,4 +16,9 @@ a:link {
 
 .uploaderMessage{
   text-align: center; 
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
