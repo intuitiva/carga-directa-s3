@@ -1,8 +1,10 @@
 # Cargar archivos directamente desde el navegador hacia S3
 
-Este proyecto conciste en habilitar una página que permita subir 2 tipos de archivos, uno en cada file input. En el bucket de S3 se crea una carpeta por cada tipo de archivo y se guardan uno a la par del siguiente dentro de su carpeta.
+Este proyecto consiste en habilitar una página que permita subir 2 tipos de archivos, uno en cada file input. En el bucket de S3 se crea una carpeta por cada tipo de archivo y se guardan uno a la par del siguiente dentro de su carpeta.
 
-Además, adjunta el correo del usuario que se utilizó en netlify identity a los metadata del archivo subido.
+Además, adjunta metadata al archivo subido, esta metadata es obtenida de Netlify Identity y la metadata del usuario.
+
+Este proyecto está hecho en React para el frontend y una sola función lambda serverless para obtener el URL a utilizar para subir los archivos (URLs firmados temporales).
 
 ## Configuración de S3 en AWS
 
