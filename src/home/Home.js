@@ -73,9 +73,9 @@ class Home extends Component {
   render() {
     return (
       <div class="container">
-        <h4>
+        <h5>
           Bienvenido {netlifyIdentity.currentUser().email}
-        </h4>
+        </h5>
         {this.state.isLoading &&
           <div className="uploaderMessage"><Loader
             type="ThreeDots"
