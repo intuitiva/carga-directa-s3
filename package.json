@@ -1,7 +1,6 @@
 {
   "name": "s3-file-uploader",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "async": "^3.1.0",
     "aws-sdk": "^2.518.0",
@@ -38,5 +37,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "author": "Luis Pedro Sarti & Arpan Gupta",
+  "license": "MIT"
 }
