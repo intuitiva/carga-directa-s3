@@ -15,9 +15,7 @@ function AuthExample() {
     <Router>
       <div>
         <AuthButton />
-        <Link to="/home">
-          <h2>Cargar Datos</h2>
-        </Link>
+        <Link to="/home"><h2>Cargar Datos Gasolinera</h2></Link>
         <Route path="/login" component={Login} />
         <PrivateRoute path="/home" component={Home} />
       </div>
@@ -49,7 +47,7 @@ const netlifyAuth = {
 const AuthButton = withRouter(
   ({ history }) =>
     netlifyAuth.isAuthenticated ? (
-      <div style="float-right;">
+      <div className="float-right">
         <button className="btn btn-info"
           onClick={() => {
             netlifyAuth.signout(() => history.push('/'));
