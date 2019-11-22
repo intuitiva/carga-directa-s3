@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import netlifyIdentity from 'netlify-identity-widget';
 import { getCsvPutUrl, getXmlPutUrl, uploadFile } from '../service/Integration';
 import Loader from 'react-loader-spinner'
-import './Home.css';
+import './../index.css';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 const fetch = require('node-fetch');
 

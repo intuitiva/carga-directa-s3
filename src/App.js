@@ -8,7 +8,7 @@ import {
   Redirect,
   withRouter
 } from 'react-router-dom';
-import './App.css';
+import './index.css';
 
 function AuthExample() {
   return (
