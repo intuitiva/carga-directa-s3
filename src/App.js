@@ -16,7 +16,7 @@ function AuthExample() {
       <div>
         <AuthButton />
         <Link to="/home">
-          <h2 className="headerText">Cargar Datos</h2>
+          <h2>Cargar Datos</h2>
         </Link>
         <Route path="/login" component={Login} />
         <PrivateRoute path="/home" component={Home} />
@@ -49,13 +49,13 @@ const netlifyAuth = {
 const AuthButton = withRouter(
   ({ history }) =>
     netlifyAuth.isAuthenticated ? (
-      <div>
-        <button class="btn btn-info"
+      <div style="float-right;">
+        <button className="btn btn-info"
           onClick={() => {
             netlifyAuth.signout(() => history.push('/'));
           }}
         >
-          Sign out
+          Salir
         </button>
       </div>
     ) : (<p></p>)
@@ -97,8 +97,8 @@ class Login extends React.Component {
     if (redirectToReferrer) return <Redirect to={from} />;
 
     return (
-      <div className="loginbutton">
-        <button className="button" onClick={this.login}>Log in</button>
+      <div>
+        <button className="btn" onClick={this.login}>Log in</button>
       </div>
     );
   }
