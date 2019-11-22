@@ -30,7 +30,7 @@ class Home extends Component {
     this.setState({ ...newState });
 
     const fileObj = this.state.csvFile;
-    complex_metadata = netlifyIdentity.currentUser().user_metadata.full_name.split(' ')
+    const complex_metadata = netlifyIdentity.currentUser().user_metadata.full_name.split(' ')
     const signedUrl = await getCsvPutUrl(fileObj.name, fileObj.type, netlifyIdentity.currentUser().email, complex_metadata[1], complex_metadata[0]);
     await uploadFile(fileObj, signedUrl);
     this.setState(this.initialState);
@@ -46,7 +46,7 @@ class Home extends Component {
     this.setState({ ...newState });
 
     const fileObj = this.state.xmlFile;
-    complex_metadata = netlifyIdentity.currentUser().user_metadata.full_name.split(' ')
+    const complex_metadata = netlifyIdentity.currentUser().user_metadata.full_name.split(' ')
     const signedUrl = await getXmlPutUrl(fileObj.name, fileObj.type, netlifyIdentity.currentUser().email, complex_metadata[1], complex_metadata[0]);
     await uploadFile(fileObj, signedUrl);
     this.setState(this.initialState);
