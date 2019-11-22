@@ -85,43 +85,39 @@ class Home extends Component {
           /></div>
         }
         <div class="row">
-          <div class="col-lg-10">
-            <div class="row">
-              <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <div class="tile">
-                  <h5 class="tile-title">Seleccionar archivo de compras .TXT</h5>
-                  <p>Envoy > Reportes > Mercancía Seca > Compras > Detalles de Compras > Imprimir a: Archivo Delimitado > Todos los Proveedores > Fecha de ayer.</p>
-                  <p class="small">El archivo se llama "Detalles de Compra.txt"</p>
-                  <form onSubmit={this.submitCsvFile}>
-                    <input className="form-control input-sm"
-                      id="csvFileInput"
-                      type="file"
-                      name="file"
-                      value={this.state.csvValue}
-                      onChange={this.handleCsvFileUpload}
-                      accept=".txt" />
-                    <button className="btn btn-success" type='submit'>Subir TXT</button>
-                  </form>
-                </div>
-              </div>
+          <div class="column">
+            <div class="tile">
+              <h5 class="tile-title">Seleccionar archivo de compras .TXT</h5>
+              <p>Envoy > Reportes > Mercancía Seca > Compras > Detalles de Compras > Imprimir a: Archivo Delimitado > Todos los Proveedores > Fecha de ayer.</p>
+              <p class="small">El archivo se llama "Detalles de Compra.txt"</p>
+              <form onSubmit={this.submitCsvFile}>
+                <input className="form-control input-sm"
+                  id="csvFileInput"
+                  type="file"
+                  name="file"
+                  value={this.state.csvValue}
+                  onChange={this.handleCsvFileUpload}
+                  accept=".txt" />
+                <button className="btn btn-success" type='submit'>Subir TXT</button>
+              </form>
+            </div>
+          </div>
 
-              <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <div class="tile">
-                  <h5 class="tile-title">Seleccionar archivo de ventas XML.GZ </h5>
-                  <p>Sapphire Transaction Manager > Tools > Options... > Ir a la carpeta que dice allí > jalar archivo de ayer</p>
-                  <p class="small">El archivo termina en .2.xml.gz y no el .1.xml.gz</p>
-                  <form onSubmit={this.submitXmlFile}>
-                    <input className="form-control input-sm"
-                      id="xmlFileInput"
-                      type="file"
-                      name="file"
-                      value={this.state.xmlValue}
-                      onChange={this.handleXmlFileUpload}
-                      accept=".xml.gz" />
-                    <button className="btn btn-inverse" type='submit'>Subir XML.GZ</button>
-                  </form>
-                </div>
-              </div>
+          <div class="column">
+            <div class="tile">
+              <h5 class="tile-title">Seleccionar archivo de ventas XML.GZ </h5>
+              <p>Sapphire Transaction Manager > Tools > Options... > Ir a la carpeta que dice allí > jalar archivo de ayer</p>
+              <p class="small">El archivo termina en .2.xml.gz y no el .1.xml.gz</p>
+              <form onSubmit={this.submitXmlFile}>
+                <input className="form-control input-sm"
+                  id="xmlFileInput"
+                  type="file"
+                  name="file"
+                  value={this.state.xmlValue}
+                  onChange={this.handleXmlFileUpload}
+                  accept=".xml.gz" />
+                <button className="btn btn-inverse" type='submit'>Subir XML.GZ</button>
+              </form>
             </div>
           </div>
         </div>
