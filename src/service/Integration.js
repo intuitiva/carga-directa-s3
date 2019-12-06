@@ -40,7 +40,7 @@ export async function uploadFile(fileObj, signedUrl) {
             alert(failureUploadMsg);
         }
         return response.json();
-    }).catch(err => console.log(err));
+    }).catch(err => console.log("uploading error >>> ", err.message));
     return response;
 }
 
