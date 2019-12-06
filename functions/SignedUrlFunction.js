@@ -84,7 +84,7 @@ function getUrl(resourceKey, mimeType, userEmail, userToken, entityId) {
 
   console.log("putParams >>>", putParams);
   const putUrl = s3.getSignedUrl("putObject", putParams);
-  console.log("formed URL >>>>", putUrl);
+  console.log("putUrl >>>>", putUrl);
   return {
     statusCode: 200,
     headers: getHeaders(),
