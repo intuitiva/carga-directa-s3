@@ -4,8 +4,8 @@ const fetch = require('node-fetch');
 
 const apiUrl = "/.netlify/functions/SignedUrlFunction";
 
-const successUploadMsg = "File upload Successful";
-const failureUploadMsg = "File upload Failed";
+const successUploadMsg = "El archivo se subio satisfactoriamente";
+const failureUploadMsg = "El archivo no se subio, ver la consola para detalles del error";
 
 export async function getCsvPutUrl(fileName, type, userEmail, userToken, entityId) {
     const payload = getPayload(fileName, type, "csv", userEmail, userToken, entityId);

@@ -24,7 +24,7 @@ exports.handler = function (event, context, callback) {
     var body = parseBody(event.body, event.isBase64Encoded);
     callback(null, getSignedUrl(body.clientFilename, body.mimeType, body.type, body.userEmail, body.userToken, body.entityId));
   } catch (error) {
-    var response = getFailurePayload("Request could not be processed.");
+    var response = getFailurePayload("Solicitud no procesada: " + error.message);
   }
   callback(null, response);
 }
