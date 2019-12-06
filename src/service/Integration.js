@@ -1,5 +1,4 @@
 // HELPERS
-var async = require('async');
 const fetch = require('node-fetch');
 
 const apiUrl = "/.netlify/functions/SignedUrlFunction";

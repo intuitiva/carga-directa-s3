@@ -4,7 +4,6 @@ import { getCsvPutUrl, getXmlPutUrl, uploadFile } from '../service/Integration';
 import Loader from 'react-loader-spinner'
 import './../index.css';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
-const fetch = require('node-fetch');
 
 class Home extends Component {
 
