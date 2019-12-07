@@ -6,7 +6,8 @@ var cuid = require("cuid");
 var s3 = new AWS.S3({
   accessKeyId: process.env.AWS_S3_ACCESS_KEY,
   secretAccessKey: process.env.AWS_S3_SECRET_KEY,
-  region: process.env.AWS_AZ_REGION
+  region: process.env.AWS_AZ_REGION,
+  signatureVersion: 'v4'
 });
 const s3BucketName = process.env.AWS_S3_BUCKET;
 const crossOrigin = process.env.NETLIFY_ACCESS_CONTROL_ALLOW_ORIGIN;
@@ -73,7 +74,7 @@ function getUrl(resourceKey, mimeType, userEmail, userToken, entityId) {
   const putParams = {
     Bucket: s3BucketName,
     Key: resourceKey,
-    ContentType: "multipart/form-data",
+    //ContentType: "multipart/form-data",
     Expires: (5 * 60),
     Metadata: {
       "user": userEmail,
