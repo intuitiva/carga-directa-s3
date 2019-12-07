@@ -31,6 +31,7 @@ class Home extends Component {
     const fileObj = this.state.csvFile;
     const complex_metadata = netlifyIdentity.currentUser().user_metadata.full_name.split(' ')
     const signedUrl = await getCsvPutUrl(fileObj.name, fileObj.type, netlifyIdentity.currentUser().email, complex_metadata[1], complex_metadata[0]);
+    console.log(signedUrl);
     await uploadFile(fileObj, signedUrl);
     this.setState(this.initialState);
   }

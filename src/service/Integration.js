@@ -8,6 +8,7 @@ const failureUploadMsg = "El archivo no se subio, ver la consola para detalles d
 
 export async function getCsvPutUrl(fileName, type, userEmail, userToken, entityId) {
     const payload = getPayload(fileName, type, "csv", userEmail, userToken, entityId);
+    console.log(payload);
     const response = await fetch(apiUrl, {
         "headers": { "content-type": "application/json" },
         "body": JSON.stringify(payload),
