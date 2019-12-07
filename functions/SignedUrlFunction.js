@@ -74,7 +74,7 @@ function getUrl(resourceKey, mimeType, userEmail, userToken, entityId) {
   const putParams = {
     Bucket: s3BucketName,
     Key: resourceKey,
-    //ContentType: "multipart/form-data",
+    ContentType: "multipart/form-data",
     Expires: (5 * 60),
     Metadata: {
       "user": userEmail,

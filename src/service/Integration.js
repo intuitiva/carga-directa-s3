@@ -39,6 +39,7 @@ export async function uploadFile(fileObj, signedUrl) {
             alert(successUploadMsg);
         } else {
             alert(failureUploadMsg);
+            console.log("error response: ", response);
         }
         return response.json();
     }).catch(err => console.log("uploading error >>> ", err.message));
