@@ -31,7 +31,7 @@ export async function getXmlPutUrl(fileName, type, userEmail, userToken, entityI
 
 export async function uploadFile(fileObj, signedUrl) {
     const response = await fetch(signedUrl.putUrl, {
-        "headers": { "content-type": "multipart/form-data" },
+        "headers": { "Content-Type": "multipart/form-data" },
         "body": fileObj,
         "method": "PUT"
     }).then(response => {

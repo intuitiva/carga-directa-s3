@@ -69,13 +69,14 @@ function getSignedUrl(fileName, mimeType, type, userEmail, userToken, entityId) 
   return getUrl(resourceKey, mimeType, userEmail, userToken, entityId);
 }
 
-// Note: SignedUrl expiry is 5 min (5*60)
+// Note: SignedUrl expiry is 10 min (10*60)
+// We will force the mimeType to multipart/form-data
 function getUrl(resourceKey, mimeType, userEmail, userToken, entityId) {
   const putParams = {
     Bucket: s3BucketName,
     Key: resourceKey,
     ContentType: "multipart/form-data",
-    Expires: (5 * 60),
+    Expires: (10 * 60),
     Metadata: {
       "user": userEmail,
       "token": userToken,
