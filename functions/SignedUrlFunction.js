@@ -65,18 +65,22 @@ function getHeaders() {
 }
 
 function getSignedUrl(fileName, mimeType, type, userEmail, userToken, entityId) {
-  var resourceKey = type === "csv" ? `csv/${cuid()}/${fileName}` : `xml/${cuid()}/${fileName}`;
+  let date_ob = new Date();
+  let year = date_ob.getFullYear();
+  let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+  let day = ("0" + date_ob.getDate()).slice(-2);
+  var resourceKey = type === "csv" ? `csv/${year.toString()}/${month.toString()}/${day.toString()}/${cuid()}/${fileName}` : `xml/${year.toString()}/${month.toString()}/${day.toString()}/${cuid()}/${fileName}`;
   return getUrl(resourceKey, mimeType, userEmail, userToken, entityId);
 }
 
-// Note: SignedUrl expiry is 10 min (10*60)
+// Note: SignedUrl expiry is 5 min (5*60)
 // We will force the mimeType to multipart/form-data
 function getUrl(resourceKey, mimeType, userEmail, userToken, entityId) {
   const putParams = {
     Bucket: s3BucketName,
     Key: resourceKey,
     ContentType: "multipart/form-data",
-    Expires: (10 * 60),
+    Expires: (5 * 60),
     Metadata: {
       "user": userEmail,
       "token": userToken,
