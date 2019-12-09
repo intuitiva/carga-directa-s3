@@ -10,7 +10,7 @@ Este proyecto está hecho en React para el frontend y una sola función lambda s
 
 1. Habilitar S3
 2. Crear un bucket
-3. Habilitar CORS al bucket (POST y PUT)
+3. Habilitar CORS al bucket (con AllowOrigin * POST y PUT) (POST para prefirmar y PUT para subir)
 4. Quitar acceso público al bucket
 4. Crear una política IAM
 5. En la política IAM, asignarle permisos de PUT a S3 al bucket creado
@@ -18,7 +18,7 @@ Este proyecto está hecho en React para el frontend y una sola función lambda s
 7. Crear un usuario IAM (con programmatic access)
 8. Adjuntar la política recién creada al usuario
 
-Para que se permita 
+Para que se permita hacer deploy.
 
 ## Deploy en Netlify
 
